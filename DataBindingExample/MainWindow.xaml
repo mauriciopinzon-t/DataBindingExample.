@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBindingExample"
         mc:Ignorable="d"
-        Title="Data Binding Example" Height="160" Width="250">
+        Title="Data Binding Example" Height="180" Width="250">
     <StackPanel Orientation="Vertical">
         <GroupBox Header="Evento" BorderBrush="Red" BorderThickness="2" Margin="8">
             <Grid Margin="4">
@@ -18,9 +18,10 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="Nombre:" HorizontalAlignment="Right"></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" x:Name="nombreTextBox"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" x:Name="nombreTextBox" Text="{Binding Title}">
+                </TextBox>
                 <Label Grid.Row="1" Grid.Column="0" Content="Fecha:" HorizontalAlignment="Right"></Label>
-                <DatePicker Grid.Row="1" Grid.Column="1" Margin="2" x:Name="fechaDatePicker"></DatePicker>
+                <DatePicker Grid.Row="1" Grid.Column="1" Margin="2" x:Name="fechaDatePicker" SelectedDate="{Binding Date}"></DatePicker>
             </Grid>
         </GroupBox>
         <Button Content="Modificar evento" x:Name="ModificarEventoButton" HorizontalAlignment="Center" Margin="6" Click="ModificarEventoButton_Click"></Button>
